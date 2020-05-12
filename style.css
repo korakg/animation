@@ -1,90 +1,161 @@
 *{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-  $border: solid 1px red;
+  margin: 0px;
+  padding: 0px;
+  box-sizing:border-box;
 }
 body{
-  display:grid;
-  place-items:center;
+  background: #02b296;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  height: 500px;
+  margin: 0;
 }
-.icon{
-  width:70px;
-  height:70px;
-  background:black;
-  -webkit-transition:0.5s;
-  transition:0.5s;
+.santa{
+  position: relative;
+  width: 210px;
+  height: 330px;
+  animation-name:santamove;
+  animation-duration:3s;
+  animation-direction:alternate;
+  animation-iteration-count:infinite;
 }
-.bike{
-  -webkit-mask: url(https://chiu945.github.io/img/bike.svg);
-          mask: url(https://chiu945.github.io/img/bike.svg);
-  -webkit-mask-size:cover;
-          mask-size:cover;
+.hat{
+  position:absolute;
+  background:#ef5c53;
+  width:100%;
+  height:90px;
+  top:30px;
+  border-radius:100px 100px 0 0;
+  box-shadow:inset 30px 0 20px rgba(0,0,0,0.1);
+  z-index:1;
 }
-.bell{
-  -webkit-mask: url(https://chiu945.github.io/img/bell.svg);
-          mask: url(https://chiu945.github.io/img/bell.svg);
-  -webkit-mask-size:cover;
-          mask-size:cover;
+.hat:before{
+  content:'';
+  position:absolute;
+  width:40px;
+  height:40px;
+  background:#fff;
+  border-radius:50%;
+  top:-30px;
+  left:0;
+  right:0;
+  margin:0 auto;
+  box-shadow:inset 30px 0 20px rgba(0,0,0,0.1);
 }
-.arrow{
- -webkit-mask: url(https://chiu945.github.io/img/arrow.svg);
-         mask: url(https://chiu945.github.io/img/arrow.svg);
-  -webkit-mask-size:cover;
-          mask-size:cover;
+.hat:after{
+  content:'';
+  position:absolute;
+  width:120%;
+  height:48px;
+  background:#fff;
+  border-radius:50px;
+  top:90px;
+  margin-left:-10%;
+  box-shadow:inset 30px 0 20px rgba(0,0,0,0.1);
 }
-.bike:hover{
-  background-color:#478;
-  -webkit-transform:scale(2);
-          transform:scale(2);
+.ear{
+  position:absolute;
+  width:48px;
+  height:48px;
+  background:#ffe1c7;
+  top:174px;
+  border-radius:50%;
+  z-index:-2;
 }
-.bell:hover{
-  background-color:red;
-  -webkit-transform:scalex(2);
-          transform:scalex(2);
+.ear.left{
+  left:-24px;
 }
-.arrow:hover{
-  background-color:rgba(54,117,1810.6);
-  -webkit-transform:scale(2) rotate(45deg);
-          transform:scale(2) rotate(45deg);
+.ear.right{
+  right:-24px;
 }
-.smile{
-  -webkit-animation-name: smile;
-          animation-name: smile;
-  -webkit-animation-duration:2s;
-          animation-duration:2s;
-  -webkit-animation-iteration-count:infinite;
-          animation-iteration-count:infinite;
-  -webkit-animation-direction:alternate;
-          animation-direction:alternate;
+.face{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:170px;
+  border-radius:0 0 120px 120px;
+  overflow:hidden;
 }
-@-webkit-keyframes smile{
-  0%{
-    background:#465;
+.face i:nth-of-type(1), .face i:nth-of-type(2){
+  position:absolute;
+  width:45%;
+  height:45%;
+  background:#ffe1c7;
+  top:0;
+  display:block;
+  border-radius:0 0 45% 45%;
+  overflow:hidden;
 }
-25%{
-  background:#112;
+.face i:nth-of-type(1){
+  left:5%;
 }
-50%{
-  background:#d45;
-  -webkit-transform:scale(2.25) rotate(-340deg);
-          transform:scale(2.25) rotate(-340deg);
+.face i:nth-of-type(2){
+  right:5%;
 }
-100%{
-  background:#h465;
-  }}
-@keyframes smile{
-  0%{
-    background:#465;
+.eye{
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:#000;
+  top:30px;
+  border-radius:50%;
 }
-25%{
-  background:#112;
+.eye.left{
+  left:55px;
 }
-50%{
-  background:#d45;
-  -webkit-transform:scale(2.25) rotate(-340deg);
-          transform:scale(2.25) rotate(-340deg);
+.eye.right{
+  right:55px;
 }
-100%{
-  background:#h465;
-  }}
+.nose{
+  position:absolute;
+  width:30px;
+  height:30px;
+  background:#ef5c53;
+  top:48px;
+  left:0;
+  right:0;
+  margin:0 auto;
+  border-radius:50%;
+}
+.beard{
+  position:absolute;
+  width:100%;
+  height:180px;
+  background:#f4f4f4;
+  bottom:0;
+  border-radius:0 0 200px 200px;
+  box-shadow:inset 0 -20px 20px rgba(0,0,0,0.1);
+  z-index:-1;
+}
+h1{
+  position:relative;
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+  color:#fff;
+}
+@keyframes santamove{
+   0%{
+    left:-300px;
+  }
+  50%{
+    transform:scale(3) rotate(-360deg);
+  }
+  100%{
+    left:300px;
+  }
+}
+.words{
+  animation-name:wordsmove;
+  animation-duration:3s;
+  animation-iteration-count:infinite;
+  animation-direction:alternate;
+}
+@keyframes wordsmove{
+   0%{
+    top:-600px;
+  }
+  100%{
+    top:300px;
+  }
+}
