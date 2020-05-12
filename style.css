@@ -1,0 +1,90 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  $border: solid 1px red;
+}
+body{
+  display:grid;
+  place-items:center;
+}
+.icon{
+  width:70px;
+  height:70px;
+  background:black;
+  -webkit-transition:0.5s;
+  transition:0.5s;
+}
+.bike{
+  -webkit-mask: url(https://chiu945.github.io/img/bike.svg);
+          mask: url(https://chiu945.github.io/img/bike.svg);
+  -webkit-mask-size:cover;
+          mask-size:cover;
+}
+.bell{
+  -webkit-mask: url(https://chiu945.github.io/img/bell.svg);
+          mask: url(https://chiu945.github.io/img/bell.svg);
+  -webkit-mask-size:cover;
+          mask-size:cover;
+}
+.arrow{
+ -webkit-mask: url(https://chiu945.github.io/img/arrow.svg);
+         mask: url(https://chiu945.github.io/img/arrow.svg);
+  -webkit-mask-size:cover;
+          mask-size:cover;
+}
+.bike:hover{
+  background-color:#478;
+  -webkit-transform:scale(2);
+          transform:scale(2);
+}
+.bell:hover{
+  background-color:red;
+  -webkit-transform:scalex(2);
+          transform:scalex(2);
+}
+.arrow:hover{
+  background-color:rgba(54,117,1810.6);
+  -webkit-transform:scale(2) rotate(45deg);
+          transform:scale(2) rotate(45deg);
+}
+.smile{
+  -webkit-animation-name: smile;
+          animation-name: smile;
+  -webkit-animation-duration:2s;
+          animation-duration:2s;
+  -webkit-animation-iteration-count:infinite;
+          animation-iteration-count:infinite;
+  -webkit-animation-direction:alternate;
+          animation-direction:alternate;
+}
+@-webkit-keyframes smile{
+  0%{
+    background:#465;
+}
+25%{
+  background:#112;
+}
+50%{
+  background:#d45;
+  -webkit-transform:scale(2.25) rotate(-340deg);
+          transform:scale(2.25) rotate(-340deg);
+}
+100%{
+  background:#h465;
+  }}
+@keyframes smile{
+  0%{
+    background:#465;
+}
+25%{
+  background:#112;
+}
+50%{
+  background:#d45;
+  -webkit-transform:scale(2.25) rotate(-340deg);
+          transform:scale(2.25) rotate(-340deg);
+}
+100%{
+  background:#h465;
+  }}
